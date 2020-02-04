@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage("master branch tasks"){
+        stage("master branch task"){
            agent {
                 label "master"
             }
@@ -18,7 +18,7 @@ pipeline {
                  sh "sh sample.sh"
             }
         }
-        stage("develop branch tasks"){
+        stage("develop branch"){
            agent {
                 label "develop"
             }
