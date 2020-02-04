@@ -29,10 +29,6 @@ pipeline {
             steps {
                 echo "on $BRANCH_NAME branch"
             }
-
-            steps {
-                 echo "on $BRANCH_NAME branch"
-            }
         }
     }
 }
