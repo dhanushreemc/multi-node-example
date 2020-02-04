@@ -1,6 +1,5 @@
 pipeline {
     agent none
-
     stages {
         stage("master branch tasks"){
            agent {
@@ -16,11 +15,10 @@ pipeline {
 
             steps {
                  echo "on master branch"
+                 sh "sh sample.sh"
             }
         }
-    
-    stages {
-        stage("master branch tasks"){
+        stage("develop branch tasks"){
            agent {
                 label "develop"
             }
@@ -31,13 +29,6 @@ pipeline {
             steps {
                 echo "on $BRANCH_NAME branch"
             }
-
-            steps {
-                 echo "on $BRANCH_NAME branch"
-            }
         }
     }
 }
-        
-        
-    
