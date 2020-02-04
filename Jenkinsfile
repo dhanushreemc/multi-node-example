@@ -10,10 +10,6 @@ pipeline {
                 branch 'master'
             }
             steps {
-                echo "$BRANCH_NAME"
-            }
-
-            steps {
                  echo "on master branch"
                  sh "sh sample.sh"
             }
