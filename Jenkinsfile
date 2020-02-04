@@ -16,6 +16,7 @@ pipeline {
 
             steps {
                  echo "on master branch"
+                 sh "sh sample.sh"
             }
         }
     
