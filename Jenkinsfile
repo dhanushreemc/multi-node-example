@@ -1,30 +1,21 @@
 pipeline {
-    agent none
+    agent {label "build"}
     stages {
         stage("master branch task"){
-           agent {
-                label "master"
-            }
-            when {
-                beforeAgent true
-                branch 'master'
-            }
+           agent { label "master"}
+            when { branch 'master'}
             steps {
-                 echo "on master branch"
-                 sh "sh sample.sh"
+                 checkout scm
+                 sh "docker build -t python ."
             }
         }
         stage("develop branch"){
-           agent {
-                label "develop"
-            }
-            when {
-                beforeAgent true
-                branch 'develop'
-            }
+           agent { label "develop"}
+            when { branch 'develop'}
             steps {
-                echo "on $BRANCH_NAME branch"
+                 checkout scm
+                 sh "docker build -t python ."
             }
-        }
+        } 
     }
 }
