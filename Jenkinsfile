@@ -2,14 +2,15 @@ pipeline {
     agent none
     stages {
         stage("master branch task"){
-            when {
+          when {
                 branch 'master'
-            }
+           
             agent { label 'master'}
             steps {
                  echo "on master branch"
                  sh "sh sample.sh"
             }
+          }
         }
         stage("develop branch"){
             when {
