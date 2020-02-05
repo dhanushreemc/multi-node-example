@@ -4,13 +4,13 @@ pipeline {
         stage("master branch task"){
           when {
                 branch 'master'
-           
+          } 
             agent { label 'master'}
             steps {
                  echo "on master branch"
                  sh "sh sample.sh"
+                 echo "running on $NODE_LABELS"
             }
-          }
         }
         stage("develop branch"){
             when {
