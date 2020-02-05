@@ -2,7 +2,7 @@ pipeline {
     agent none
     stages {
         stage("master branch task"){
-           agent { label "master"}
+           agent { label 'master'}
             when { branch 'master'}
             steps {
                  checkout scm
@@ -10,7 +10,7 @@ pipeline {
             }
         }
         stage("develop branch"){
-           agent { label "develop"}
+           agent { label 'develop'}
             when { branch 'develop'}
             steps {
                  checkout scm
