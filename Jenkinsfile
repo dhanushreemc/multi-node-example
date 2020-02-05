@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "build"}
+    agent none
     stages {
         stage("master branch task"){
            agent { label "master"}
